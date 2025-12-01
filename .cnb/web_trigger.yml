@@ -18,13 +18,11 @@ branch:
           # roles 和 users 配置其中之一或都配置均可，二者满足其一即可
           # 角色非向上包含关系。例如如下配置，表示仅 master 或 developer 角色才有权限，owner 即使仓库权限更高，但此处无权限
           roles:
-            - master
-            - developer
+            - owner
         # 环境变量
         env:
           # 默认传入的环境变量，其中 key 值（a,b,c）为环境变量名，支持如下两种格式
           a: 1
-          b: 2
           c:
             # 环境变量别名
             name: 变量c
