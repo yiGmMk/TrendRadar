@@ -19,5 +19,5 @@ main:
   "crontab: 0 1 * * *": # 每天1点执行
     # 简化配置,引用重复的配置 https://docs.cnb.cool/zh/build/simplify-configuration.html
     - <<: *pull_code
-  pull_github:
+  web_trigger_pull_github:
     - <<: *pull_code
