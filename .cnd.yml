@@ -1,0 +1,17 @@
+# .cnb.yml
+
+main:
+  "crontab: 0 1 * * *": # 每天1点执行
+    - name: sync from github
+      # 导入秘钥.
+      imports: 
+          - https://cnb.cool/serverless-coding/accesskey/-/blob/main/env.yml
+      stages:
+        - name: sync from github
+          image: tencentcom/git-sync
+          settings:
+            target_url: https://github.com/yiGmMk/TrendRadar.git
+            auth_type: https
+            username: ${GIT_USERNAME}
+            password: ${GIT_ACCESS_TOKEN}
+            sync_mode: pull
